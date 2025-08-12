@@ -1,0 +1,15 @@
+{
+    "menu": {
+        "lngButton": "EN-US",
+        "homeButton": "HOME",
+        "avButton": "AUDIOVISUAL PROJECTS",
+        "ccButton": "COMPUTER SCIENCE PROJECTS",
+        "drawButton": "DRAWINGS",
+        "contButton": "CONTACT ME"
+    },
+    "home": {
+        "carousel": {
+            "welcomeTxt": "WELCOME"
+        }
+    }
+}

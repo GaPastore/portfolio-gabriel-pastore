@@ -10,6 +10,45 @@
     z-index: 1000;
 }
 
+.languageDiv {
+    position: fixed;
+    z-index: 1000;
+    top: 1rem;
+    left: 1rem;
+    align-content: center;
+    justify-items: center;
+}
+
+.dropBt, .dropContent {
+    width: 5rem;
+    height: 3rem;
+    text-align: center;
+    align-content: center;
+    letter-spacing: 0.3rem;
+}
+
+.dropBt {
+    background-color: #ffffff00;
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: rgb(225, 93, 245);
+    color: rgb(225, 93, 245);
+    transition: all .4s ease-in-out;
+}
+
+.dropContent > .dropBt {
+    border: none;
+    visibility: hidden;
+    opacity: 0%;
+}
+
+.languageDiv:hover .dropBt {
+    visibility: visible;
+    opacity: 100%;
+}
+
 .top, .bottom {
     background: url('../../../../public/menuStickLight.svg');
     background-repeat: no-repeat;
@@ -97,6 +136,10 @@
 @media screen and (prefers-color-scheme: dark) {
     .menuBg.visible {
         background-color: rgba(0,0,0,.7);
+    }
+    .dropBt, .dropContent {
+        border-color: #D5FFA9;
+        color: #D5FFA9;
     }
     .menuBox, .menuText {
         a {

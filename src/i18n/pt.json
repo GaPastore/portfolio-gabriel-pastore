@@ -1,0 +1,18 @@
+{
+    "menu": {
+        "lngButton": "PT-BR",
+        "homeButton": "PÁGINA PRINCIPAL",
+        "avButton": "PROJETOS EM AUDIOVISUAL",
+        "ccButton": "CIÊNCIA DA COMPUTAÇÃO",
+        "drawButton": "DESENHOS",
+        "contButton": "CONTATO"
+    },
+    "home": {
+        "carousel": {
+            "welcomeTxt": "BEM-VINDO"
+        },
+        "header": {
+            "mainTxt": ""
+        }
+    }
+}
