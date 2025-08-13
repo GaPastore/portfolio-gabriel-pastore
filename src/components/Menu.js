@@ -1,14 +1,8 @@
-<<<<<<< Updated upstream
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/components/Home/Menu.module.css';
-=======
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/components/Home/Menu.module.css';
 import { useTranslation } from "react-i18next";
 import "../i18n/i18n";
->>>>>>> Stashed changes
 
 function Menu(){
 
@@ -18,14 +12,6 @@ function Menu(){
         i18n.changeLanguage(lng);
         localStorage.setItem("lang", lng);
     };
-
-    useEffect(()=>{
-        const savedLang = localStorage.getItem("lang");
-        if (savedLang) {
-            i18n.changeLanguage(savedLang);
-        }
-    },[])
-
 
     const [menuHidden, setMenuHidden] = useState(false);
     

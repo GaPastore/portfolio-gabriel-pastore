@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useTranslation } from "react-i18next";
+import "./i18n/i18n";
 import Home from './pages/Home';
 import Audiovisual from './pages/Audiovisual';
 import CienciaDaComputacao from './pages/CienciaDaComputacao';
@@ -8,6 +11,17 @@ import Contato from './pages/Contato';
 import Menu from './components/Menu';
 
 function App() {
+
+  
+  const { t, i18n } = useTranslation();
+
+  useEffect(()=>{
+      const savedLang = localStorage.getItem("lang");
+      if (savedLang) {
+          i18n.changeLanguage(savedLang);
+      }
+  },[])
+
   return (
     <Router>
       <Menu/>
@@ -21,6 +35,7 @@ function App() {
       </Routes>
     </Router>
   );
+
 }
 
 export default App;
