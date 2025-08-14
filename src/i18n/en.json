@@ -10,6 +10,20 @@
     "home": {
         "carousel": {
             "welcomeTxt": "WELCOME"
+        },
+        "header": {
+            "mainTxt": ""
+        },
+        "contentSlider" : {
+            "clickHere": " click here.",
+            "slideGames": "",
+            "slideDrawings": "",
+            "slideDev": "",
+            "slideYoutube": "",
+            "slideSomosAlgo": ""
         }
+    },
+    "contact": {
+        "drawings": "(drawings account)"
     }
 }

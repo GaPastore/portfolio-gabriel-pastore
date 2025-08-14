@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
 import styles from '../../styles/components/Contato/Header.module.css';
 
-function Header(){
+import { useTranslation } from 'react-i18next';
+
+function ContentContato(){
+  
+  const { t } = useTranslation();
 
     return(
         <div>
@@ -13,7 +16,7 @@ function Header(){
                     </a>
                     <div id={styles.instagram} className={styles.profileImg}></div>
                     <a className={"oswald-plus " + styles.introText} href='https://www.instagram.com/pastore_drawing' target='_blank' rel="noopener noreferrer">
-                        @pastore_drawing - Instagram (desenhos) 🔗
+                        @pastore_drawing - Instagram {t("contact.drawings")} 🔗
                     </a>
                     <div id={styles.github} className={styles.profileImg}></div>
                     <a className={"oswald-plus " + styles.introText} href='https://github.com/GaPastore' target='_blank' rel="noopener noreferrer">
@@ -30,4 +33,4 @@ function Header(){
 
 }
 
-export default Header;
+export default ContentContato;

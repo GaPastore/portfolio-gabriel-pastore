@@ -8,6 +8,7 @@
     top: 1rem;
     border: none;
     z-index: 1000;
+    transition: all .2s ease-in-out;
 }
 
 .languageDiv {
@@ -35,13 +36,17 @@
     border-right: 0;
     border-color: rgb(225, 93, 245);
     color: rgb(225, 93, 245);
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .dropContent > .dropBt {
     border: none;
     visibility: hidden;
     opacity: 0%;
+}
+
+.dropBt:hover, .menuText:hover, .menuBt:hover {
+    filter: brightness(0.5);
 }
 
 .languageDiv:hover .dropBt {

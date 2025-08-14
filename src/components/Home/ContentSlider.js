@@ -3,8 +3,13 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from "../../styles/components/Home/ContentSlider.module.css"
+import DOMPurify from 'dompurify';
 
-function ContentSlider() {
+import { useTranslation } from 'react-i18next';
+
+function ContentSlider(){
+
+  const { t } = useTranslation();
 
     const [nIndex, setnIndex] = useState(null);
     const [disabled, setDisabled] = useState(false);
@@ -147,81 +152,71 @@ function ContentSlider() {
                     <div className={styles.sliderContent} data-index="0">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside + " oswald-geral"}>
-                            Meu currículo inclui o desenvolvimento de alguns <strong>jogos</strong> de pequeno porte, um desses exemplos
-                            é o Micescape: um jogo 2D desenvolvido em <strong>Unity</strong> com elementos de terror. Para ver esse e mais
-                            projetos, <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideGames"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="1">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Há muitos anos tenho como hobby as <strong>artes</strong>, principalmente através de <strong>desenhos</strong> - sejam eles físicos
-                            ou digitais. Se você quer ver algumas das artes digitais que já fiz durante o tempo, <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDrawings"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="2">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Desde 2018 tenho estudado <strong>programação</strong> e outras questões relacionadas à informática, com diversos projetos para demonstração de minhas habilidades. O melhor exemplo para
-                            isso é <strong>esse site</strong>: todo seu planejamento e desenvolvimento foi feito por mim. 
-                            Para acessar esses projetos, <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDev"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="3">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Desde que comecei a estudar na área de audiovisual, tenho como hobby a <strong>edição</strong> de imagens e vídeos, produzindo 
-                            para amigos, faculdade, trabalho ou apenas para mim. Um exemplo 
-                            desses projetos é um canal do <strong>YouTube</strong> em que posto vídeos para me divertir e 
-                            testar minhas habilidades como editor. Para acessá-lo ou ver outros projetos em audiovisual, <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideYoutube"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="4">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Conforme meus estudos em audiovisual e programação avançaram, 
-                            desenvolvi elementos visuais, logos e interfaces para diversos projetos. Isso pode ser 
-                            visto no Instagram de "Somos Algo?", em que desenvolvi as artes e vídeos de cada post. Para ver esse e mais projetos em audiovisual, <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideSomosAlgo"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="5">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside + " oswald-geral"}>
-                            Meu currículo inclui o desenvolvimento de alguns <strong>jogos</strong> de pequeno porte, um desses exemplos
-                            é o Micescape: um jogo 2D desenvolvido em <strong>Unity</strong> com elementos de terror. Para ver esse e mais
-                            projetos, <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideGames"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="6">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Há muitos anos tenho como hobby as <strong>artes</strong>, principalmente através de <strong>desenhos</strong> - sejam eles físicos
-                            ou digitais. Se você quer ver algumas das artes digitais que já fiz durante o tempo, <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDrawings"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="7">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Desde 2018 tenho estudado <strong>programação</strong> e outras questões relacionadas à informática, com diversos projetos para demonstração de minhas habilidades. O melhor exemplo para
-                            isso é <strong>esse site</strong>: todo seu planejamento e desenvolvimento foi feito por mim. 
-                            Para acessar esses projetos, <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDev"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="8">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Desde que comecei a estudar na área de audiovisual, tenho como hobby a <strong>edição</strong> de imagens e vídeos, produzindo 
-                            para amigos, faculdade, trabalho ou apenas para mim. Um exemplo 
-                            desses projetos é um canal do <strong>YouTube</strong> em que posto vídeos para me divertir e 
-                            testar minhas habilidades como editor. Para acessá-lo ou ver outros projetos em audiovisual, <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideYoutube"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                     <div className={styles.sliderContent} data-index="9">
                         <div className={styles.sliderOverlay}></div>
                         <div className={styles.sliderInside  + " oswald-geral"}>
-                            Conforme meus estudos em audiovisual e programação avançaram, 
-                            desenvolvi <strong>elementos visuais</strong>, logos e interfaces para diversos projetos. Isso pode ser 
-                            visto no <strong>Instagram</strong> de "Somos Algo?", em que desenvolvi as artes e vídeos de cada post. Para ver esse e mais projetos em audiovisual, <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>clique aqui.</Link>
+                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideSomosAlgo"))}}></span>
+                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
                         </div>
                     </div>
                 </div>

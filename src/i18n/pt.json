@@ -5,7 +5,7 @@
         "avButton": "PROJETOS EM AUDIOVISUAL",
         "ccButton": "CIÊNCIA DA COMPUTAÇÃO",
         "drawButton": "DESENHOS",
-        "contButton": "CONTATO"
+        "contButton": "INFORMAÇÕES PARA CONTATO"
     },
     "home": {
         "carousel": {
@@ -13,6 +13,17 @@
         },
         "header": {
             "mainTxt": ""
+        },
+        "contentSlider" : {
+            "clickHere": "clique aqui.",
+            "slideGames": "",
+            "slideDrawings": "",
+            "slideDev": "",
+            "slideYoutube": "",
+            "slideSomosAlgo": ""
         }
+    },
+    "contact": {
+        "drawings": "(conta de desenhos)"
     }
 }

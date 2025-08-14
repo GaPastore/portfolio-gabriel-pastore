@@ -1,4 +1,5 @@
 import styles from '../../styles/components/Home/Header.module.css';
+import DOMPurify from 'dompurify';
 
 import { useTranslation } from 'react-i18next';
 
@@ -12,7 +13,7 @@ function Header(){
                 <div className={styles.holderImg}>
                     <div className={styles.profileImg}></div>
                 </div>
-                <div className={"oswald-geral " + styles.introText} dangerouslySetInnerHTML={{__html: t("home.header.mainTxt")}}></div>
+                <div className={"oswald-geral " + styles.introText} dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(t("home.header.mainTxt"))}}></div>
             </div>
         </div>
     )
