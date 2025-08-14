@@ -91,6 +91,12 @@
     }
 }
 
+@media (any-pointer: coarse) {
+    .introDiv {
+        height: 60vh;
+    }
+}
+
 @media (max-width: 500px) {
     .profileImg {
         height: 5.7rem;

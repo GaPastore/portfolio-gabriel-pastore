@@ -199,6 +199,7 @@
         }
         .menuText, .menuText:link, .menuText:visited {
             padding: 1rem 0;
+            letter-spacing: 0.3rem;
             font-size: 3vh;
         }
         .dropBt, .dropContent {

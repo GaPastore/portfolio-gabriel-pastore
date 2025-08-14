@@ -81,9 +81,11 @@
     z-index: 9;
 }
 
-.drawImg:hover > .imgBox {
-    opacity: 1;
-    font-size: xx-large;
+@media (hover:hover) {
+    .drawImg:hover > .imgBox {
+        opacity: 1;
+        font-size: xx-large;
+    }
 }
 
 #chronolight {
@@ -162,8 +164,10 @@
         width: 28rem;
         font-size: medium;
     }
-    .drawImg:hover > .imgBox {
-        font-size: large;
+    @media (hover:hover){
+        .drawImg:hover > .imgBox {
+            font-size: large;
+        }
     }
 }
 

@@ -23,6 +23,21 @@
             "slideSomosAlgo": ""
         }
     },
+    "audiovisual" : {
+        "somosAlgo": "Somos Algo? - Digital Marketing for indie short film 🔗",
+        "fitTrack": "FitTrack - Mobile app prototype 🔗",
+        "youtube": "Pastore - YouTube channel 🔗"
+    },
+    "computerScience" : {
+        "chronolight": "ChronoLight - 3D Game 🔗",
+        "micescape": "Micescape - 2D Game 🔗",
+        "iconomonster": "Iconomonster - Site using Vue.js 🔗",
+        "imageasy": "ImagEasy - Site using Angular 🔗",
+        "curriculumAI": "Curriculum AI - Site using React 🔗",
+        "greenPrint": "Green Print - Java app 🔗",
+        "equacionando": "Equacionando² - 2D educational game 🔗",
+        "theDomeOfHope": "The Dome of Hope - 2D educational game 🔗"
+    },
     "contact": {
         "drawings": "(drawings account)"
     }
