@@ -45,13 +45,24 @@
     opacity: 0%;
 }
 
-.dropBt:hover, .menuText:hover, .menuBt:hover {
-    filter: brightness(0.5);
+@media(hover:hover) {
+    .dropBt:hover, .menuText:hover, .menuBt:hover {
+        filter: brightness(0.5);
+    }
+    .languageDiv:hover .dropBt {
+        visibility: visible;
+        opacity: 100%;
+    }
 }
 
-.languageDiv:hover .dropBt {
-    visibility: visible;
-    opacity: 100%;
+@media (any-pointer: coarse) {
+    .dropBt:active, .menuText:active, .menuBt:active {
+        filter: brightness(0.5);
+    }
+    .lngOpen {
+        visibility: visible !important;
+        opacity: 100% !important;
+    }
 }
 
 .top, .bottom {
@@ -190,6 +201,11 @@
             padding: 1rem 0;
             font-size: 3vh;
         }
+        .dropBt, .dropContent {
+            width: 10rem;
+            height: 6rem;
+            font-size: 2rem;
+        }
     }
 
     @media (max-width: 900px) {
@@ -199,6 +215,11 @@
         }
         .menuText, .menuText:link, .menuText:visited {
             letter-spacing: 0.6rem;
+        }
+        .dropBt, .dropContent {
+            width: 5rem;
+            height: 3rem;
+            font-size: 1rem;
         }
     }
     
