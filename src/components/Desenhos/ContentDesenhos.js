@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../../styles/components/ContentLinks.module.css';
-import desenhos from '../../styles/components/Desenhos/Header.module.css'
+import desenhos from '../../styles/components/Desenhos/Drawings.module.css'
 
 function Content(){
 

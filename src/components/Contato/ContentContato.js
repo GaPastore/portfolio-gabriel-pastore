@@ -1,4 +1,4 @@
-import styles from '../../styles/components/Contato/Header.module.css';
+import styles from '../../styles/components/Contato/Content.module.css';
 
 import { useTranslation } from 'react-i18next';
 

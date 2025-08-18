@@ -9,6 +9,7 @@
     border: none;
     z-index: 1000;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 .languageDiv {
@@ -18,6 +19,7 @@
     left: 1rem;
     align-content: center;
     justify-items: center;
+    cursor: default;
 }
 
 .dropBt, .dropContent {
@@ -39,17 +41,26 @@
     transition: all .2s ease-in-out;
 }
 
-.dropContent > .dropBt {
-    border: none;
+.first {
+    width: 5rem;
+    height: 3rem;
+}
+
+.dropContent {
     visibility: hidden;
     opacity: 0%;
+    transition: all .2s ease-in-out;
+    .dropBt {  
+        border: none;
+        cursor: pointer;
+    }
 }
 
 @media(hover:hover) {
     .dropBt:hover, .menuText:hover, .menuBt:hover {
         filter: brightness(0.5);
     }
-    .languageDiv:hover .dropBt {
+    .first:hover > .dropContent {
         visibility: visible;
         opacity: 100%;
     }

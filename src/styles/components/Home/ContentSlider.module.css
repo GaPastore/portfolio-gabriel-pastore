@@ -50,6 +50,11 @@
 @media (hover:hover) {
     #leftButton:hover, #rightButton:hover {
         width: 10vh;
+        cursor: pointer;
+    }
+
+    #leftButton:active, #rightButton:active {
+        width: 7vh;
     }
     
     .active:hover{

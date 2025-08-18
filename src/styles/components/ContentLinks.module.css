@@ -2,7 +2,6 @@
     width: 100%;
     height: 100vh;
     padding: 5rem 0;
-    background-color: #690079;
     position: relative;
     overflow: hidden;
     align-content: center;
@@ -38,15 +37,13 @@
 }
 
 .flexDiv::-webkit-scrollbar-track {
-    background-color: rgba(249, 212, 255,.5); 
+    background-color: #330E3950;
     border-radius: 10px;
 }
-
 .flexDiv::-webkit-scrollbar-thumb {
+    background-color: #330E39; 
     border-radius: 10px;
-    background-color: rgba(249, 212, 255,1); 
 }
-
 .drawImg, .imgBox {
     width: 45rem;
     aspect-ratio: 16 / 9;
@@ -63,26 +60,25 @@
     position: relative;
 }
 
-.drawImg:hover, .drawImg:hover > .imgBox {
+.drawImg:hover, .imgBox:hover {
     aspect-ratio: 16 / 10;
 }
 
 .imgBox {
     position: absolute;
-    background: rgb(249, 212, 255);
-    background: linear-gradient(180deg, rgba(249, 212, 255,0) 0%, rgba(249, 212, 255,1) 65%);
+    background: linear-gradient(180deg, #330E3900 0%, #330E39 65%);
     text-align: center;
     align-content: end;
     transform: translate(-2rem,-2rem);
     text-decoration: none;
-    color: #330E39;
+    color: rgba(249, 212, 255,1);
     font-size: x-large;
     opacity: 0;
     z-index: 9;
 }
 
 @media (hover:hover) {
-    .drawImg:hover > .imgBox {
+    .imgBox:hover {
         opacity: 1;
         font-size: xx-large;
     }
@@ -143,30 +139,28 @@
     .introText{
         color: #101010;
     }
-    .introDiv {
-        background-color: #8BCD45;
-    }
     .imgBox {
         background: rgb(16,16,16);
         background: linear-gradient(180deg, rgba(16,16,16,0) 0%, rgba(16,16,16,1) 65%);
         color: #ffffff;
     }
     .flexDiv::-webkit-scrollbar-track {
-        background-color: rgba(16, 16, 16,.5);
+        background-color: rgba(213, 255, 169,.5);
     }
+
     .flexDiv::-webkit-scrollbar-thumb {
-        background-color: rgba(16, 16, 16,1); 
+        background-color: rgba(213, 255, 169,1); 
     }
 }
 
 @media (max-width: 1366px) {
     .drawImg, .imgBox {
         width: 28rem;
-        font-size: medium;
+        font-size: small;
     }
     @media (hover:hover){
-        .drawImg:hover > .imgBox {
-            font-size: large;
+        .imgBox:hover {
+            font-size: medium;
         }
     }
 }
@@ -175,7 +169,7 @@
     .flexDiv {
         grid-template-columns: auto;
     }
-    .drawImg:hover, .drawImg:hover > .imgBox {
+    .drawImg:hover, .imgBox:hover {
         aspect-ratio: 16 / 9;
     }
     .drawImg, .imgBox {
@@ -191,7 +185,7 @@
             aspect-ratio: 2 / 1;
             font-size: larger;
         }
-        .drawImg:hover, .drawImg:hover > .imgBox {
+        .drawImg:hover, .imgBox:hover {
             aspect-ratio: 2 / 1;
         }
     }
@@ -201,7 +195,7 @@
             aspect-ratio: 1.5 / 1;
             font-size: medium;
         }
-        .drawImg:hover, .drawImg:hover > .imgBox {
+        .drawImg:hover, .imgBox:hover {
             aspect-ratio: 1.5 / 1;
         }
     }

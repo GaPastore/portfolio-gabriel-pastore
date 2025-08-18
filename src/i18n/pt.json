@@ -24,11 +24,13 @@
         }
     },
     "audiovisual" : {
+        "intro": "",
         "somosAlgo": "Somos Algo? - Marketing Digital para curta 🔗",
         "fitTrack": "FitTrack - Projeto visual de App Mobile 🔗",
         "youtube": "Pastore - Canal do YouTube 🔗"
     },
     "computerScience" : {
+        "intro": "",
         "chronolight": "ChronoLight - Jogo 3D 🔗",
         "micescape": "Micescape - Jogo 2D 🔗",
         "iconomonster": "Iconomonster - Site em Vue.js 🔗",
@@ -37,6 +39,9 @@
         "greenPrint": "Green Print - App em Java 🔗",
         "equacionando": "Equacionando² - Jogo 2D educacional 🔗",
         "theDomeOfHope": "The Dome of Hope - Jogo 2D educacional 🔗"
+    },
+    "drawings": {
+        "intro": ""
     },
     "contact": {
         "drawings": "(conta de desenhos)"
