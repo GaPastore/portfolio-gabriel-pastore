@@ -8,7 +8,7 @@ function IntroDesenhos(){
 
     return(
         <div>
-            <div className={styles.introDiv}>
+            <div className={styles.introDiv + " " + styles.drawingDiv}>
                 <div className={styles.introText + " oswald-geral"} 
                 dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("drawings.intro"))}}/>
             </div>
