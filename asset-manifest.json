@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-gabriel-pastore/static/css/main.e2942cad.css",
-    "main.js": "/portfolio-gabriel-pastore/static/js/main.043c319e.js",
+    "main.css": "/portfolio-gabriel-pastore/static/css/main.d133ba23.css",
+    "main.js": "/portfolio-gabriel-pastore/static/js/main.71f5e33d.js",
     "static/js/453.d4e0fcc4.chunk.js": "/portfolio-gabriel-pastore/static/js/453.d4e0fcc4.chunk.js",
     "static/media/kira-queen-watermark.png": "/portfolio-gabriel-pastore/static/media/kira-queen-watermark.cfd8cb7c6cb6a264f1f7.png",
     "static/media/joshua-watermark.png": "/portfolio-gabriel-pastore/static/media/joshua-watermark.144b46ea1e364f0af281.png",
@@ -10,6 +10,7 @@
     "static/media/jotaro-watermark.png": "/portfolio-gabriel-pastore/static/media/jotaro-watermark.119b8f83c7ef0c4bbe9e.png",
     "static/media/youtube.png": "/portfolio-gabriel-pastore/static/media/youtube.797e46610a3de8b965ab.png",
     "static/media/nika-watermark.png": "/portfolio-gabriel-pastore/static/media/nika-watermark.2e69d59969206d3567a2.png",
+    "static/media/me.jpg": "/portfolio-gabriel-pastore/static/media/me.465378ccdb020e6a2b86.jpg",
     "static/media/shinji-watermark.png": "/portfolio-gabriel-pastore/static/media/shinji-watermark.3d9133369d6bb04a0339.png",
     "static/media/yamato-watermark.jpg": "/portfolio-gabriel-pastore/static/media/yamato-watermark.95e14a94be9a1ec5298a.jpg",
     "static/media/kirby-watermark.png": "/portfolio-gabriel-pastore/static/media/kirby-watermark.f2e028919c13b8f087cf.png",
@@ -18,7 +19,6 @@
     "static/media/somos-algo.png": "/portfolio-gabriel-pastore/static/media/somos-algo.800d94183b27d15355be.png",
     "static/media/micescape.jpg": "/portfolio-gabriel-pastore/static/media/micescape.e07ede5ec81d83120c80.jpg",
     "static/media/chronolight.png": "/portfolio-gabriel-pastore/static/media/chronolight.1348a3118ec0493650f4.png",
-    "static/media/me.jpg": "/portfolio-gabriel-pastore/static/media/me.db235fa6d7cef4de7956.jpg",
     "static/media/the-dome-of-hope.png": "/portfolio-gabriel-pastore/static/media/the-dome-of-hope.67c34ae1aba6ff106309.png",
     "static/media/instagram-bright.png": "/portfolio-gabriel-pastore/static/media/instagram-bright.bb7b706c70250f294a8e.png",
     "static/media/instagram-dark.png": "/portfolio-gabriel-pastore/static/media/instagram-dark.eaf668fbc0e4c9f9c8c0.png",
@@ -48,12 +48,12 @@
     "static/media/ArrowDark.svg": "/portfolio-gabriel-pastore/static/media/ArrowDark.1281c870e6756c17b6a5.svg",
     "static/media/slideDrawings.php": "/portfolio-gabriel-pastore/static/media/slideDrawings.1d14b238f5f6fef92d4f.php",
     "static/media/ArrowLight.svg": "/portfolio-gabriel-pastore/static/media/ArrowLight.2f4444f8fba2f8487fc9.svg",
-    "main.e2942cad.css.map": "/portfolio-gabriel-pastore/static/css/main.e2942cad.css.map",
-    "main.043c319e.js.map": "/portfolio-gabriel-pastore/static/js/main.043c319e.js.map",
+    "main.d133ba23.css.map": "/portfolio-gabriel-pastore/static/css/main.d133ba23.css.map",
+    "main.71f5e33d.js.map": "/portfolio-gabriel-pastore/static/js/main.71f5e33d.js.map",
     "453.d4e0fcc4.chunk.js.map": "/portfolio-gabriel-pastore/static/js/453.d4e0fcc4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2942cad.css",
-    "static/js/main.043c319e.js"
+    "static/css/main.d133ba23.css",
+    "static/js/main.71f5e33d.js"
   ]
 }
