@@ -66,9 +66,9 @@ function Menu(){
             <div className={styles.languageDiv}>
                 <div className={styles.first}>
                     <div className={styles.dropBt + " oswald-plus"} onClick={toggleLngButton}>{t("menu.lngButton")}</div>            
-                    <div className={styles.dropContent}>
-                        <button className={`${styles.dropBt} ${lngHidden ? styles.lngOpen : ''} ${" oswald-geral"}`} onClick={() => {changeLanguage("pt"); toggleLngButton()}}>PT-BR</button>
-                        <button className={`${styles.dropBt} ${lngHidden ? styles.lngOpen : ''} ${" oswald-geral"}`} onClick={() => {changeLanguage("en"); toggleLngButton()}}>EN-US</button>
+                    <div className={`${styles.dropContent} ${lngHidden ? styles.lngOpen : ''}`}>
+                        <button className={`${styles.dropBt} ${" oswald-geral"}`} onClick={() => {changeLanguage("pt"); toggleLngButton()}}>PT-BR</button>
+                        <button className={`${styles.dropBt} ${" oswald-geral"}`} onClick={() => {changeLanguage("en"); toggleLngButton()}}>EN-US</button>
                     </div>
                 </div>
             </div>
