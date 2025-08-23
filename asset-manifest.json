@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/portfolio-gabriel-pastore/static/css/main.05dc0a11.css",
-    "main.js": "/portfolio-gabriel-pastore/static/js/main.5dd5d7c9.js",
+    "main.js": "/portfolio-gabriel-pastore/static/js/main.8f843588.js",
     "static/js/453.d4e0fcc4.chunk.js": "/portfolio-gabriel-pastore/static/js/453.d4e0fcc4.chunk.js",
+    "static/media/portfolio-audiovisual.mp4": "/portfolio-gabriel-pastore/static/media/portfolio-audiovisual.420b814e595cac3c00f0.mp4",
+    "static/media/portfolio-cc.mp4": "/portfolio-gabriel-pastore/static/media/portfolio-cc.2528565db2e9bb39d678.mp4",
     "static/media/kira-queen-watermark.png": "/portfolio-gabriel-pastore/static/media/kira-queen-watermark.cfd8cb7c6cb6a264f1f7.png",
     "static/media/joshua-watermark.png": "/portfolio-gabriel-pastore/static/media/joshua-watermark.144b46ea1e364f0af281.png",
     "static/media/college-dropout-watermark.png": "/portfolio-gabriel-pastore/static/media/college-dropout-watermark.aeaae2da8080cdc846c1.png",
@@ -49,11 +51,11 @@
     "static/media/ArrowLight.svg": "/portfolio-gabriel-pastore/static/media/ArrowLight.2a136b5a71fa58395a29.svg",
     "static/media/slideDrawings.php": "/portfolio-gabriel-pastore/static/media/slideDrawings.1d14b238f5f6fef92d4f.php",
     "main.05dc0a11.css.map": "/portfolio-gabriel-pastore/static/css/main.05dc0a11.css.map",
-    "main.5dd5d7c9.js.map": "/portfolio-gabriel-pastore/static/js/main.5dd5d7c9.js.map",
+    "main.8f843588.js.map": "/portfolio-gabriel-pastore/static/js/main.8f843588.js.map",
     "453.d4e0fcc4.chunk.js.map": "/portfolio-gabriel-pastore/static/js/453.d4e0fcc4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05dc0a11.css",
-    "static/js/main.5dd5d7c9.js"
+    "static/js/main.8f843588.js"
   ]
 }
