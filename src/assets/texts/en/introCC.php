@@ -1,4 +1,4 @@
-I have technology as study topic since 2018, when I entered Colégio ENIAC and studied 
+I have technology as my main study topic since 2018, when I entered Colégio ENIAC and studied 
 IT-focused <strong>technical education</strong>. In 2021, after finishing school, I started 
 Computer Science <strong>bachelor's degree</strong> at Universidade São Judas Tadeu, finishing in June 2025. 
 Through all these years, I was able to develop many projects and make a deep dive into <strong>programming 

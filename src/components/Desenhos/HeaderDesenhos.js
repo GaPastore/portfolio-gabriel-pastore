@@ -1,6 +1,6 @@
 import plainHeader from '../../styles/components/PlainHeader.module.css'
 import vignette from '../../styles/components/Vignette.module.css'
-import Bg from '../../assets/misc/college-dropout-watermark.png'
+import Bg from '../../assets/misc/portfolio-desenhos.mp4'
 
 import { useTranslation } from 'react-i18next';
 
@@ -20,7 +20,7 @@ function HeaderDesenhos(){
             <div className={plainHeader.header}>
                 <div className={plainHeader.headerText + " oswald-plus"}>{t("menu.drawButton")}</div>
                 <div className={vignette.vignette}></div>
-                <div className={plainHeader.headerImage} style={{backgroundImage: `url(${urls[0].content})`}}></div>
+                <div className={plainHeader.headerImage}><video preload='auto' autoPlay={true} loop='loop'><source src={Bg} type='video/mp4'/></video></div>
             </div>
             
           </div>
