@@ -35,6 +35,10 @@
   background-position: center;
 }
 
+.headerImage > video {
+  height: 100%;
+}
+
 @media screen and (prefers-color-scheme: dark) {
   .headerText {
       color: #D5FFA9;
@@ -51,5 +55,11 @@
   .headerText {
     font-size: 1.6rem;
     letter-spacing: 6px;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .headerImage > video {
+    transform: translateX(-25%)
   }
 }
