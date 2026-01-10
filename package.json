@@ -1,6 +1,6 @@
 {
   "name": "portfolio-project",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://gapastore.github.io/portfolio-gabriel-pastore",
   "private": true,
   "dependencies": {
@@ -20,10 +20,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -44,11 +43,12 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
     "ajv": "^7.2.4",
     "dompurify": "^3.2.6",
     "gh-pages": "^6.3.0",
     "raw-loader": "^4.0.2",
-    "react-scripts": "^5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
   }
 }

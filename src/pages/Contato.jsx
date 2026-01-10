@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import HeaderContato from '../components/Contato/HeaderContato';
 import ContentContato from '../components/Contato/ContentContato';
 
