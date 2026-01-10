@@ -1,2 +1,0 @@
-My portfolio includes the development of some small scope <strong>games</strong>. One of those examples is 
-Micescape: a 2D game developed in <strong>Unity</strong> with horror elements. To see this and other projects, 
