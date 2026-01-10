@@ -41,22 +41,22 @@ function Menu(){
             <div className={`${styles.menuBg} ${menuHidden ? styles.visible : ''}`}></div>
             <div className={`${styles.menuBox} ${menuHidden ? styles.visible : ''}`}>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore" onClick={homeOnClick}>{t("menu.homeButton")}</Link>
+                    <Link to="/" onClick={homeOnClick}>{t("menu.homeButton")}</Link>
                 </button>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("menu.avButton")}</Link>
+                    <Link to="/audiovisual" onClick={scrollTop}>{t("menu.avButton")}</Link>
                 </button>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("menu.ccButton")}</Link>
+                    <Link to="/ciencia_da_computacao" onClick={scrollTop}>{t("menu.ccButton")}</Link>
                 </button>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>{t("menu.drawButton")}</Link>
+                    <Link to="/desenhos" onClick={scrollTop}>{t("menu.drawButton")}</Link>
                 </button>
                 {/*<button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore/shot" onClick={scrollTop}>SHOT</Link>
+                    <Link to="/shot" onClick={scrollTop}>SHOT</Link>
                 </button>*/}
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/portfolio-gabriel-pastore/contato" onClick={scrollTop}>{t("menu.contButton")}</Link>
+                    <Link to="/contato" onClick={scrollTop}>{t("menu.contButton")}</Link>
                 </button>
             </div>
             <div className={styles.menuBt} onClick={toggleButton}>

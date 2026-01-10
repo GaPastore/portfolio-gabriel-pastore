@@ -26,12 +26,12 @@ function App() {
     <Router>
       <Menu/>
       <Routes>
-        <Route path='/portfolio-gabriel-pastore' element={<Home />} />
-        <Route path='/portfolio-gabriel-pastore/audiovisual' element={<Audiovisual />} />
-        <Route path='/portfolio-gabriel-pastore/ciencia_da_computacao' element={<CienciaDaComputacao />} />
-        <Route path='/portfolio-gabriel-pastore/desenhos' element={<Desenhos />} />
-        <Route path='/portfolio-gabriel-pastore/shot' element={<Shot />} />
-        <Route path='/portfolio-gabriel-pastore/contato' element={<Contato />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/audiovisual' element={<Audiovisual />} />
+        <Route path='/ciencia_da_computacao' element={<CienciaDaComputacao />} />
+        <Route path='/desenhos' element={<Desenhos />} />
+        <Route path='/shot' element={<Shot />} />
+        <Route path='/contato' element={<Contato />} />
       </Routes>
     </Router>
   );
