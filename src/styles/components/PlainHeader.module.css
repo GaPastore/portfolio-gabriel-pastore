@@ -2,12 +2,12 @@
   text-align: center;
   font-size: 5rem;
   text-align: center;
-  color: rgb(249, 212, 255);
+  color: var(--color-pink-light);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: var(--z-header);
   animation: text 5s forwards;
 }
 
@@ -41,7 +41,7 @@
 
 @media screen and (prefers-color-scheme: dark) {
   .headerText {
-      color: #D5FFA9;
+      color: var(--color-green-light);
   }
 }
 

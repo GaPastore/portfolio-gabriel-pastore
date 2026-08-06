@@ -1,0 +1,43 @@
+:root {
+  /* Transparência Total Unificada */
+  --color-transparent: transparent;
+
+  /* Cores Principais - Tema Claro */
+  --color-purple-primary: #690079;
+  --color-purple-dark: #330E39;
+  --color-purple-dark-50: #330E3950;
+  --color-purple-dark-vignette-30: rgba(51, 14, 57, 0.3);
+  --color-purple-dark-vignette-80: rgba(51, 14, 57, 0.8);
+  
+  --color-pink-light: #f9d4ff;
+  --color-pink-vibrant: #e15df5;
+  
+  --color-white: #ffffff;
+  --color-white-70: rgba(255, 255, 255, 0.7);
+
+  /* Cores Principais - Tema Escuro (Dark Mode) */
+  --color-dark-bg: #101010;
+  --color-green-primary: #8BCD45;
+  --color-green-primary-50: #8BCD4550;
+  --color-green-light: #D5FFA9;
+
+  /* Transparências neutras parciais */
+  --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-70: rgba(0, 0, 0, 0.7);
+  --color-black-80: rgba(0, 0, 0, 0.8);
+
+  /* Arredondamentos (Border-Radius) */
+  --radius-xl: 5rem;
+  --radius-lg: 4rem;
+  --radius-md: 2rem;
+  --radius-sm: 10px;
+  --radius-mobile: 2vh;
+
+  /* Escala de Z-Index */
+  --z-base: 1;
+  --z-overlay: 2;
+  --z-content: 9;
+  --z-vignette: 998;
+  --z-header: 999;
+  --z-menu: 1000;
+}

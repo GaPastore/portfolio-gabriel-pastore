@@ -7,14 +7,14 @@
     right: 1rem;
     top: 1rem;
     border: none;
-    z-index: 1000;
+    z-index: var(--z-menu);
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
 .languageDiv {
     position: fixed;
-    z-index: 1000;
+    z-index: var(--z-menu);
     top: 1rem;
     left: 1rem;
     align-content: center;
@@ -31,13 +31,13 @@
 }
 
 .dropBt {
-    background-color: #ffffff00;
+    background-color: var(--color-transparent);
     border-style: solid;
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-color: rgb(225, 93, 245);
-    color: rgb(225, 93, 245);
+    border-color: var(--color-pink-vibrant);
+    color: var(--color-pink-vibrant);
     transition: all .2s ease-in-out;
 }
 
@@ -102,11 +102,11 @@
     height: 100%;
     align-items: center;
     align-content: center;
-    z-index: 1000;
+    z-index: var(--z-menu);
 }
 
 .menuText, .menuText:link, .menuText:visited {
-    background-color: transparent;
+    background-color: var(--color-transparent);
     text-decoration: none;
     border: none;
     width: 100%;
@@ -114,68 +114,59 @@
     font-size: 6.5vh;
     letter-spacing: 0.7rem;
     text-align: center;
-    color: #69007900;
-    z-index: 1000;
+    color: var(--color-transparent);
+    z-index: var(--z-menu);
 }
 
 .menuBox, .menuText, .menuBg{
-    -webkit-transition: all .7s ease-out;
-    -moz-transition: all .7s ease-out;
-    -o-transition: all .7s ease-out;
     transition: all .7s ease-out;
     a {
-        color: #69007900;
-        -webkit-transition: all .7s ease-out;
-        -moz-transition: all .7s ease-out;
-        -o-transition: all .7s ease-out;
+        color: var(--color-transparent);
         transition: all .7s ease-out;
         text-decoration: none;
     }
     visibility: hidden;
-    z-index: 1000;
+    z-index: var(--z-menu);
 }
 
 .menuBox.visible, .menuText.visible{
-    -webkit-backdrop-filter: blur(20px);
-    -moz-backdrop-filter: blur(20px);
-    -o-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     visibility: visible;
     a {
-        color: #690079;
+        color: var(--color-purple-primary);
     }
-    z-index: 1000;
+    z-index: var(--z-menu);
 }
 
 .menuBg{
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 999;
-    background-color: rgba(249, 212, 255,0);
+    z-index: var(--z-header);
+    background-color: var(--color-transparent);
 }
 
 .menuBg.visible{
-    background-color: rgba(255, 255, 255,.7);
+    background-color: var(--color-white-70);
     visibility: visible;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     .menuBg.visible {
-        background-color: rgba(0,0,0,.7);
+        background-color: var(--color-black-70);
     }
     .dropBt, .dropContent {
-        border-color: #D5FFA9;
-        color: #D5FFA9;
+        border-color: var(--color-green-light);
+        color: var(--color-green-light);
     }
     .menuBox, .menuText {
         a {
-            color: #8BCD4500;
+            color: var(--color-transparent);
         }
     }
     .menuBox.visible, .menuText.visible {
         a {
-            color: #8BCD45;
+            color: var(--color-green-primary);
         }
     }
     .top, .bottom {

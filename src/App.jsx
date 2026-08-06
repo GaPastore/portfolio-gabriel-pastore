@@ -1,4 +1,4 @@
-import { createRouter, RootRoute, Route, RouterProvider } from '@tanstack/react-router'
+import { createRouter, RootRoute, Route, RouterProvider, Outlet } from '@tanstack/react-router'
 import { useEffect } from 'react'
 import { useTranslation } from "react-i18next"
 import "./i18n/i18n"
@@ -23,6 +23,7 @@ function RootLayout() {
   return (
     <>
       <Menu />
+      <Outlet />
     </>
   )
 }
@@ -49,7 +50,7 @@ const cienciaRoute = new Route({
   component: CienciaDaComputacao,
 })
 
-const desenhos Route = new Route({
+const desenhosRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/desenhos',
   component: Desenhos,
@@ -80,12 +81,6 @@ const router = createRouter({
   routeTree,
   basepath: '/portfolio-gabriel-pastore',
 })
-
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router
-  }
-}
 
 function App() {
   return <RouterProvider router={router} />

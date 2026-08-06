@@ -1,124 +1,108 @@
 .introDiv {
-    width: 100%;
-    height: 140vh;
-    background-color: #690079;
+    min-height: max-content;
+    background-color: var(--color-purple-primary);
     position: relative;
     overflow: hidden;
-    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
 }
 
 .socialBox {
     display: grid;
-    grid-template-columns: 1fr 7fr;
-    grid-column-gap: 10rem;
-    grid-row-gap: 5rem;
-    margin: 0 5rem 0 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.socialItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 100%;
+    min-width: 0;
+}
+
+.socialItem:hover {
+    filter: brightness(0.7);
+    transform: translateY(-2px);
 }
 
 .introText {
-    width: 100%;
     position: relative;
-    text-decoration: none;
-    text-align: center;
-    align-content: center;
-    color: #ffffff;
-    font-size: 5vh;
-    transition: all .3s ease-in-out;
-}
-
-.introText:hover {
-    filter: brightness(.5);
+    text-align: left;
+    color: var(--color-white);
+    font-size: clamp(1.1rem, 1.8vw, 1.8rem);
+    letter-spacing: 2px;
+    word-break: break-word;
+    margin: 0;
 }
 
 .profileImg {
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 20rem;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
     position: relative;
-}
-
-#linkedin {
-    background-image: url('../../../assets/misc/linkedin-bright.png');
-}
-
-#instagram {
-    background-image: url('../../../assets/misc/instagram-bright.png');
-}
-
-#github {
-    background-image: url('../../../assets/misc/github-bright.png');
-}
-
-#itchIo {
-    background-image: url('../../../assets/misc/itch-io-bright.png');
+    color: var(--color-white);
+    fill: currentColor;
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    .introText{
-        color: #101010;
-    }
     .introDiv {
-        background-color: #8BCD45;
+        background-color: var(--color-green-primary);
     }
-    .introText:hover {
-        filter: brightness(2);
-    }
-    #instagram {
-        background-image: url('../../../assets/misc/instagram-dark.png');
-    }
-    #linkedin {
-        background-image: url('../../../assets/misc/linkedin-dark.png');
-    }
-    #github {
-        background-image: url('../../../assets/misc/github-dark.png');
-    }
-    #itchIo {
-        background-image: url('../../../assets/misc/itch-io-dark.png');
-    }
-}
-
-@media (max-width: 1366px) {
     .introText {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
-        padding-bottom: 3rem;
+        color: var(--color-dark-bg);
     }
-    .introDiv {
-        height: 170vh;
-    }
-}
-
-@media (any-pointer: coarse) {
-    .introDiv {
-        height: 60vh;
-    }
-}
-
-@media (max-width: 500px) {
     .profileImg {
-        height: 5.7rem;
+        color: var(--color-dark-bg);
+    }
+    .socialItem:hover {
+        filter: brightness(1.3);
+    }
+}
+
+@media (max-width: 1024px) {
+    .socialBox {
+        grid-column-gap: 2rem;
+        grid-row-gap: 3rem;
+    }
+    .profileImg {
+        width: 3rem;
+        height: 3rem;
+    }
+    .introText {
+        font-size: clamp(1rem, 2.2vw, 1.5rem);
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 640px) {
+    .introDiv {
+        padding: 4rem 1rem;
     }
     .socialBox {
-        align-items: center;
-        justify-items: center;
-        margin: 0 2rem 0 2rem;
-        grid-template-columns: 1fr;
-        grid-row-gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1rem;
+        grid-row-gap: 2.5rem;
+    }
+    .socialItem {
+        gap: 0.75rem;
+    }
+    .profileImg {
+        width: 2.25rem;
+        height: 2.25rem;
     }
     .introText {
-        font-size: 2.3vh;
-        letter-spacing: 4px;
-        padding-bottom: 3rem;
-    }
-    .introText:hover {
-        filter: brightness(1);
-    }
-    @media screen and (prefers-color-scheme: dark) {   
-        .introText:hover {
-            filter: brightness(1);
-        }
+        font-size: clamp(0.85rem, 3.2vw, 1.1rem);
+        letter-spacing: 1px;
     }
 }

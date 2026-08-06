@@ -2,7 +2,7 @@
     height: 30rem;
     aspect-ratio: 1 / 1;
     min-width: 0;
-    border-radius: 5rem;
+    border-radius: var(--radius-xl);
     background-position: center;
     margin: 0 1rem 0 1rem;
     background-size: cover;
@@ -58,10 +58,10 @@
 
 @media screen and (prefers-color-scheme: dark) {
     .introText{
-        color: #101010;
+        color: var(--color-dark-bg);
     }
     .introDiv {
-        background-color: #8BCD45;
+        background-color: var(--color-green-primary);
     }
 }
 

@@ -1,14 +1,9 @@
-.vignette{
+.vignette {
     position: absolute;
-    z-index: 998;
+    z-index: var(--z-vignette);
     width: var(--width);
     height: var(--height);
-    background-color: rgba(51, 14, 57, .3);
-    box-shadow: 0 0 300px 300px rgba(51, 14, 57, .8) inset;
+    background-color: var(--color-black-30);
+    box-shadow: 0 0 300px 300px var(--color-black-80) inset;
     backdrop-filter: blur(8px);
-}
- 
-.vignette {
-    background-color: rgba(0,0,0,.3);
-    box-shadow: 0 0 300px 300px rgba(0,0,0,.8) inset;
 }

@@ -6,5 +6,6 @@ export default defineConfig({
   assetsInclude: ['**/*.php'],
   build: {
     outDir: 'build', // CRA's default build output
+    assetsInlineLimit: 0,
   },
 });

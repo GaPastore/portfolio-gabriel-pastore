@@ -43,7 +43,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 5rem;
+    border-radius: var(--radius-xl);
     justify-items: end;
 }
 
@@ -139,7 +139,7 @@
 .sliderInside, .sliderOverlay{
     overflow: hidden;
     opacity: 0;
-    z-index: 2;
+    z-index: var(--z-overlay);
     transition: opacity 1s;
 }
 
@@ -157,17 +157,17 @@
 }
 
 .sliderInside, .link {
-    color: rgb(249, 212, 255);
+    color: var(--color-pink-light);
 }
 
 .sliderOverlay {
-    border-radius: 5rem;
+    border-radius: var(--radius-xl);
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #330E3900 0%, #330E39 50%);
+    background: linear-gradient(90deg, var(--color-transparent) 0%, var(--color-purple-dark) 50%);
     background-size: contain;
     position: absolute;
-    z-index: 1;
+    z-index: var(--z-base);
 }
 
 .link {
@@ -192,13 +192,13 @@
 
 @media screen and (prefers-color-scheme: dark) {
     .sliderOverlay {
-        background: linear-gradient(90deg, #D5FFA900 0%, #D5FFA9 50%);
+        background: linear-gradient(90deg, var(--color-transparent) 0%, var(--color-green-light) 50%);
     }
     #leftButton, #rightButton {
         background-image: url("../../../../public/ArrowDark.svg");
     }
     .sliderInside, .link {
-        color: #101010;
+        color: var(--color-dark-bg);
     }
 }
 
@@ -218,7 +218,7 @@
         width: 10vh;
     }
     .sliderOverlay, .sliderContent {
-        border-radius: 2vh;
+        border-radius: var(--radius-mobile);
     }
     .active {
         width: 100%;
@@ -227,7 +227,7 @@
         }
     }
     .sliderOverlay {
-        background: linear-gradient(180deg, #330E3900 0%, #330E39 50%);
+        background: linear-gradient(180deg, var(--color-transparent) 0%, var(--color-purple-dark) 50%);
     }
     .sliderInside {
         width: 90%;
@@ -261,7 +261,7 @@
     }
     @media screen and (prefers-color-scheme: dark) {   
         .sliderOverlay {
-            background: linear-gradient(180deg, #D5FFA900 0%, #D5FFA9 50%);
+            background: linear-gradient(180deg, var(--color-transparent) 0%, var(--color-green-light) 50%);
         }
     }
 }

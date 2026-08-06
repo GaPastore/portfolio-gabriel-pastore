@@ -76,6 +76,6 @@
 
 @media screen and (prefers-color-scheme: dark) {
   .carouselText {
-      color: #D5FFA9;
+      color: var(--color-green-light);
   }
 }

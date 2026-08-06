@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import styles from '../styles/components/Home/Menu.module.css';
 import { useTranslation } from "react-i18next";
 import "../i18n/i18n";
@@ -41,7 +41,7 @@ function Menu(){
             <div className={`${styles.menuBg} ${menuHidden ? styles.visible : ''}`}></div>
             <div className={`${styles.menuBox} ${menuHidden ? styles.visible : ''}`}>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
-                    <Link to="/" onClick={homeOnClick}>{t("menu.homeButton")}</Link>
+                    <Link to="/" onClick={scrollTop}>{t("menu.homeButton")}</Link>
                 </button>
                 <button className={`${classesText} ${menuHidden ? styles.visible : ''}`} onClick={toggleButton}>
                     <Link to="/audiovisual" onClick={scrollTop}>{t("menu.avButton")}</Link>

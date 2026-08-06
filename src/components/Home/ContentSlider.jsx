@@ -1,7 +1,7 @@
 import useState from 'react-usestateref';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import styles from "../../styles/components/Home/ContentSlider.module.css"
 import DOMPurify from 'dompurify';
 
