@@ -23,7 +23,7 @@ function App() {
   },[])
 
   return (
-    <Router>
+    <Router basename="/portfolio-gabriel-pastore">
       <Menu/>
       <Routes>
         <Route path='/' element={<Home />} />
