@@ -7,7 +7,12 @@
 
 .box {
     height: 100vh;
-    align-content: center;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-top: 5rem;
 }
 
 .slider{
@@ -28,10 +33,7 @@
 }
 
 .animClass{
-    transition: transform 2s;
-    animation: anim-slider-1 ease-in-out 10s infinite normal forwards;
-    animation-play-state: paused;
-    animation-range-start: var(--seconds-slider);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
 }
 
 .sliderContent{
@@ -44,7 +46,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: var(--radius-xl);
-    justify-items: end;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
 }
 
 @media (hover:hover) {
@@ -60,9 +64,9 @@
     .active:hover{
         width: 100%;
         aspect-ratio: 3.06 / 2; 
-        .sliderOverlay, .sliderInside {
-            opacity: 1;
-        }
+    }
+    .active:hover .sliderOverlay, .active:hover .sliderInside {
+        opacity: 1;
     }
 }
 
@@ -71,7 +75,6 @@
 }
 
 .buttonBox {
-    position: absolute;
     width: 100%;
     height: 12vh;
     padding-top: 3rem;
@@ -94,70 +97,9 @@
     transition: width 0.4s;
 }
 
-
 #leftButton {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-}
-
-@keyframes anim-slider-1 {
-	0% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * .25)); 
-    }
-    10% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * .75)); 
-    }
-    20% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * .75)); 
-    }
-    30% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 1.25)); 
-    }
-    40% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 1.25)); 
-    }
-    50% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 1.75)); 
-    }
-    60% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 1.75)); 
-    }
-    70% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 2.25)); 
-    }
-    80% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 2.25)); 
-    }
-    90% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 2.75)); 
-    }
-	100% { 
-        transform: translateX(calc(-1 * var(--width-slider) / var(--slides-qt-slider) * 2.75)); 
-    }
-}
-
-.sliderInside, .sliderOverlay{
-    overflow: hidden;
-    opacity: 0;
-    z-index: var(--z-overlay);
-    transition: opacity 1s;
-}
-
-.sliderInside {
-    width: 40%;
-    height: 85%;
-    font-size: min(1.3vw, 30px);
-    letter-spacing: .5rem;
-    position: absolute;
-    text-align: right;
-    text-overflow: clip;
-    top: 50%;
-    left: 55%;
-    transform: translateY(-50%);
-}
-
-.sliderInside, .link {
-    color: var(--color-pink-light);
 }
 
 .sliderOverlay {
@@ -165,13 +107,43 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, var(--color-transparent) 0%, var(--color-purple-dark) 50%);
-    background-size: contain;
+    background-size: cover;
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: var(--z-base);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.sliderInside {
+    opacity: 0;
+    z-index: var(--z-overlay);
+    transition: opacity 1s;
+    width: 45%;
+    max-height: 90%;
+    font-size: min(1.3vw, 30px);
+    letter-spacing: .15rem;
+    position: absolute;
+    text-align: right;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.sliderInside, .link {
+    color: var(--color-pink-light);
 }
 
 .link {
     font-weight: 500;
+    margin-top: 0.5rem;
+    display: inline-block;
 }
 
 [data-index="0"], [data-index="5"] {
@@ -209,9 +181,8 @@
     }
 }
 
-@media (any-pointer: coarse) {
+@media (any-pointer: coarse), (max-width: 768px) {
     .sliderContent { 
-        aspect-ratio: 1 / 4;
         margin: 0 .5vh;
     }
     #leftButton:active, #rightButton:active {
@@ -222,46 +193,50 @@
     }
     .active {
         width: 100%;
-        .sliderOverlay, .sliderInside {
-            opacity: 1;
-        }
+    }
+    .active .sliderOverlay, .active .sliderInside {
+        opacity: 1;
     }
     .sliderOverlay {
-        background: linear-gradient(180deg, var(--color-transparent) 0%, var(--color-purple-dark) 50%);
+        background: linear-gradient(180deg, var(--color-transparent) 10%, var(--color-purple-dark) 80%);
     }
     .sliderInside {
-        width: 90%;
-        height: 90%;
-        align-content: end;
-        padding: 20px;
-        text-align: justify;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        top: 0;
         left: 0;
-        top: 50%;
-        letter-spacing: 2px;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 1.25rem 1.5rem;
+        box-sizing: border-box;
+        text-align: left;
+        letter-spacing: 1px;
+        overflow: visible;
+    }
+    .sliderInside span {
+        display: block;
+        line-height: 1.35;
+        margin-bottom: 0.4rem;
     }
     @media (max-width: 1366px) {
         .sliderInside {
-            font-size: min(1.8vw, 30px);
-        }
-    }
-    @media (max-width: 1100px) {
-        .sliderInside {
-            font-size: min(4.6vw, 60px);
-        }
-    }
-    @media (max-width: 1030px) {
-        .sliderInside {
-            font-size: min(3.5vw, 60px);
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
         }
     }
     @media (max-width: 700px) {
         .sliderInside {
-            font-size: min(3.5vw, 30px);
+            font-size: clamp(0.9rem, 3.8vw, 1.15rem);
+            padding: 1.25rem 1rem;
+            letter-spacing: 0.5px;
         }
     }
     @media screen and (prefers-color-scheme: dark) {   
         .sliderOverlay {
-            background: linear-gradient(180deg, var(--color-transparent) 0%, var(--color-green-light) 50%);
+            background: linear-gradient(180deg, var(--color-transparent) 10%, var(--color-green-light) 80%);
         }
     }
 }

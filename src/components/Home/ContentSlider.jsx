@@ -9,225 +9,99 @@ import { useTranslation } from 'react-i18next';
 
 function ContentSlider(){
 
-  const { t } = useTranslation();
-
-    const [nIndex, setnIndex] = useState(null);
-    const [disabled, setDisabled] = useState(false);
+    const { t } = useTranslation();
     
-    const divRef = useRef();
-
-    const slide = document.getElementsByClassName(styles.sliderContent);
-
-    function setInactive(value) {
-        slide[value].classList.remove(styles.active)
-        slide[value].classList.add(styles.inactive)
-    }
-
-    function setActive(v1, v2) {
-        slide[v1].classList.remove(styles.inactive)
-        slide[v1].classList.add(styles.active)
-        slide[v2].classList.remove(styles.inactive)
-        slide[v2].classList.add(styles.active)
-    }
-
-    const varSlide = () => {
-
-        for(let i = 0; i < slide.length; i++) {
-            setInactive(i)
-        }
-
-        if(divRef.current.classList.contains('next')) {
-
-            if(nIndex === null) {
-                setActive(1, 6)
-            }
-            else {
-                var v1 = (((nIndex % 10) / 2) + 2) % 5
-                var v2 = ((((nIndex % 10) / 2) + 2) % 5) + 5
-
-                setActive(v1, v2)
-            }
-
-        }
-        else if(divRef.current.classList.contains('prev')) {
-            
-            if(nIndex === null) {
-                setActive(4, 9)
-            }
-            else {
-                var v1 = (nIndex % 10) / 2
-                var v2 = ((nIndex % 10) / 2) + 5  
-
-                setActive(v1, v2)
-            }
-
-        }
-        
-    }
-
     const scrollTop = () => {
         window.scrollTo(0, 0)
     }
 
-    useEffect(() => {
+    const [disabled, setDisabled] = useState(false);
 
-        divRef.current.style.animationDelay = '0s'
-        divRef.current.style.animationDirection = 'normal'
-        divRef.current.classList.add('next')
-        varSlide()
-        setnIndex(0)
-        
-    }, [])
+    const totalItems = 10;
+    const step = 100 / totalItems;
 
-    const animReset = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(true);
 
-        divRef.current.classList.remove(styles.animClass)
-        void divRef.current.offsetWidth
-        divRef.current.classList.add(styles.animClass)
-
-    }
-
-    const switchPrev = () => {
-        divRef.current.style.animationDelay = '-' + (((10 - nIndex) % 10) + 1) + 's'
-    }
-
-    const switchNext = () => {
-        divRef.current.style.animationDelay = '-' + (nIndex % 10) + 's'
+    const nextItem = () => {
+        setIsTransitioning(true);
+        setActiveIndex(activeIndex + 1);
     }
 
     const prevItem = () => {
+        if(activeIndex === 0) {
+            setIsTransitioning(false);
+            setActiveIndex(5);
 
-        divRef.current.classList.add('prev')
-        divRef.current.classList.remove('next')
-
-        if(divRef.current.style.animationDirection === 'normal'){
-            animReset()
-            switchPrev()
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    setIsTransitioning(true);
+                    setActiveIndex(4);
+                })
+            })
+        }
+        else {
+            setIsTransitioning(true);
+            setActiveIndex(activeIndex - 1);
         }
 
-        varSlide()
+    }
 
-        divRef.current.style.animationDirection = 'reverse'
-        divRef.current.style.animationPlayState = 'running'
-        setDisabled(true)
-
-        setTimeout(() => {
-            divRef.current.style.animationPlayState = 'paused'
-            divRef.current.style.pointerEvents = 'auto'
-            setnIndex((nIndex) => (nIndex - 2 + slide.length) % slide.length)
-            setDisabled(false)
-        }, 1995)
-
-    };
-
-    const nextItem = () => {
-
-        divRef.current.classList.add('next')
-        divRef.current.classList.remove('prev')
-
-        if(divRef.current.style.animationDirection === 'reverse'){
-            animReset()
-            switchNext()
+    const handleTransitionEnd = () => {
+        if (activeIndex >= 5) {
+            setIsTransitioning(false); 
+            setActiveIndex(0);
         }
-
-        varSlide()
-
-        divRef.current.style.animationDirection = 'normal'
-        divRef.current.style.animationPlayState = 'running'
-        setDisabled(true)
-
-        setTimeout(() => {
-            divRef.current.style.animationPlayState = 'paused'
-            divRef.current.style.pointerEvents = 'auto'
-            setnIndex((nIndex) => (nIndex + 2) % slide.length)
-            setDisabled(false)
-        }, 1995)
-
     };
+
+    const slidesData = [
+        { id: 0, textKey: "home.contentSlider.slideGames", link: "/ciencia_da_computacao" },
+        { id: 1, textKey: "home.contentSlider.slideDrawings", link: "/desenhos" },
+        { id: 2, textKey: "home.contentSlider.slideDev", link: "/ciencia_da_computacao" },
+        { id: 3, textKey: "home.contentSlider.slideYoutube", link: "/audiovisual" },
+        { id: 4, textKey: "home.contentSlider.slideSomosAlgo", link: "/audiovisual" },
+
+        { id: 5, textKey: "home.contentSlider.slideGames", link: "/ciencia_da_computacao" },
+        { id: 6, textKey: "home.contentSlider.slideDrawings", link: "/desenhos" },
+        { id: 7, textKey: "home.contentSlider.slideDev", link: "/ciencia_da_computacao" },
+        { id: 8, textKey: "home.contentSlider.slideYoutube", link: "/audiovisual" },
+        { id: 9, textKey: "home.contentSlider.slideSomosAlgo", link: "/audiovisual" },
+    ];
 
     return(
         <div className={styles.box}>
             <div className={styles.slider}>
-                <div ref={divRef} className={styles.sliderBox + " " + styles.animClass}>
-                    <div className={styles.sliderContent} data-index="0">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideGames"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="1">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDrawings"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="2">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDev"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="3">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideYoutube"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="4">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideSomosAlgo"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="5">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideGames"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="6">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDrawings"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/desenhos" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="7">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideDev"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/ciencia_da_computacao" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="8">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideYoutube"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
-                    <div className={styles.sliderContent} data-index="9">
-                        <div className={styles.sliderOverlay}></div>
-                        <div className={styles.sliderInside  + " oswald-geral"}>
-                            <span dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t("home.contentSlider.slideSomosAlgo"))}}></span>
-                            <Link className={styles.link} to="/portfolio-gabriel-pastore/audiovisual" onClick={scrollTop}>{t("home.contentSlider.clickHere")}</Link>
-                        </div>
-                    </div>
+                <div className={`${styles.sliderBox} ${styles.animClass}`}  onTransitionEnd={handleTransitionEnd} 
+                style={{ transform: `translateX(-${activeIndex * step}%)`, 
+                transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'}}>
+                    {slidesData.map((item, index) => {
+
+                        const isActive = index === activeIndex || index === (activeIndex + 5) % 10
+                        
+                        return(
+                            <div key={index} 
+                            className={`${styles.sliderContent} ${isActive ? styles.active : styles.inactive}`} 
+                            data-index={item.id}>
+                                <div className={styles.sliderOverlay}></div>
+                                <div className={styles.sliderInside + " oswald-geral"}>
+                                    <span 
+                                    dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(t(item.textKey))}}>
+                                    </span>
+                                    <Link className={styles.link} to={item.link} onClick={scrollTop}>
+                                    {t("home.contentSlider.clickHere")}
+                                    </Link>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
-            </div>   
+            </div>
             <div className={styles.buttonBox}>
                 <div onClick={disabled ? () => {} : prevItem} id={styles.leftButton}></div>
                 <div onClick={disabled ? () => {} : nextItem} id={styles.rightButton}></div>
             </div>
         </div>
     )
-
 }
 
 export default ContentSlider;

@@ -22,6 +22,7 @@
     "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node -e \"require('fs').copyFileSync('build/index.html', 'build/404.html')\"",
     "preview": "vite preview"
   },
   "eslintConfig": {
