@@ -17,10 +17,10 @@ function ContentSlider(){
 
     const [disabled, setDisabled] = useState(false);
 
-    const totalItems = 10;
+    const totalItems = 15;
     const step = 100 / totalItems;
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(5);
     const [isTransitioning, setIsTransitioning] = useState(true);
 
     const nextItem = () => {
@@ -29,44 +29,31 @@ function ContentSlider(){
     }
 
     const prevItem = () => {
-        if(activeIndex === 0) {
-            setIsTransitioning(false);
-            setActiveIndex(5);
+        setIsTransitioning(true);
+        setActiveIndex((prev) => prev - 1);
+    };
 
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    setIsTransitioning(true);
-                    setActiveIndex(4);
-                })
-            })
-        }
-        else {
-            setIsTransitioning(true);
-            setActiveIndex(activeIndex - 1);
-        }
-
-    }
-
-    const handleTransitionEnd = () => {
-        if (activeIndex >= 5) {
+    const handleTransitionEnd = (e) => {
+        if (e.target !== e.currentTarget) return;
+        if (activeIndex >= 10) {
             setIsTransitioning(false); 
-            setActiveIndex(0);
+            setActiveIndex((prev) => prev - 5);
+        }
+        else if (activeIndex < 5) {
+            setIsTransitioning(false);
+            setActiveIndex((prev) => prev + 5);
         }
     };
 
-    const slidesData = [
-        { id: 0, textKey: "home.contentSlider.slideGames", link: "/ciencia_da_computacao" },
-        { id: 1, textKey: "home.contentSlider.slideDrawings", link: "/desenhos" },
-        { id: 2, textKey: "home.contentSlider.slideDev", link: "/ciencia_da_computacao" },
-        { id: 3, textKey: "home.contentSlider.slideYoutube", link: "/audiovisual" },
-        { id: 4, textKey: "home.contentSlider.slideSomosAlgo", link: "/audiovisual" },
+    const slidesData = []
 
-        { id: 5, textKey: "home.contentSlider.slideGames", link: "/ciencia_da_computacao" },
-        { id: 6, textKey: "home.contentSlider.slideDrawings", link: "/desenhos" },
-        { id: 7, textKey: "home.contentSlider.slideDev", link: "/ciencia_da_computacao" },
-        { id: 8, textKey: "home.contentSlider.slideYoutube", link: "/audiovisual" },
-        { id: 9, textKey: "home.contentSlider.slideSomosAlgo", link: "/audiovisual" },
-    ];
+    for(let i = 0; i <= 10 ; i += 5) {
+        slidesData.push({ id: i+0, textKey: "home.contentSlider.slideGames", link: "/ciencia_da_computacao" });
+        slidesData.push({ id: i+1, textKey: "home.contentSlider.slideDrawings", link: "/desenhos" });
+        slidesData.push({ id: i+2, textKey: "home.contentSlider.slideDev", link: "/ciencia_da_computacao" });
+        slidesData.push({ id: i+3, textKey: "home.contentSlider.slideYoutube", link: "/audiovisual" });
+        slidesData.push({ id: i+4, textKey: "home.contentSlider.slideSomosAlgo", link: "/audiovisual" });
+    }
 
     return(
         <div className={styles.box}>
@@ -76,7 +63,7 @@ function ContentSlider(){
                 transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'}}>
                     {slidesData.map((item, index) => {
 
-                        const isActive = index === activeIndex || index === (activeIndex + 5) % 10
+                        const isActive = (index % 5) === (activeIndex % 5);
                         
                         return(
                             <div key={index} 

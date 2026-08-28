@@ -1,7 +1,7 @@
 :root{
-  --width-slider: 100%;
+  --width-slider: 100vw;
   --height-slider: 75vh;
-  --slides-qt-slider: 5;
+  --slides-qt-slider: 7.5;
   --seconds-slider: 0%;
 }
 
@@ -17,7 +17,7 @@
 
 .slider{
     width: 100%;
-    height: var(--height-slider);
+    height: calc(var(--height-slider)*2);
     overflow: hidden;
     position: relative;
 }
@@ -30,6 +30,7 @@
     align-items: stretch;
     flex-direction: row;
     overflow: hidden;
+    left: 25%;
 }
 
 .animClass{
@@ -41,7 +42,7 @@
     aspect-ratio: 1 / 1;
     position: relative;
     margin: 0 3rem;
-    transition: opacity 1s, aspect-ratio 1s, background-image 1s;
+    transition: opacity 0.4s ease, aspect-ratio 0.4s ease;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,6 +50,10 @@
     display: flex;
     align-items: flex-end;
     overflow: hidden;
+}
+
+.sliderContent.active {
+    opacity: 1;
 }
 
 @media (hover:hover) {
@@ -77,16 +82,16 @@
 .buttonBox {
     width: 100%;
     height: 12vh;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 10vh;
     display: flex;
     justify-items: center;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #leftButton, #rightButton {
-    position: relative;
+    position: absolute;
     width: 8vh;
     aspect-ratio: 1 / 1;
     margin: 0 9vw;
@@ -100,6 +105,11 @@
 #leftButton {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    right: 50%;
+}
+
+#rightButton {
+    left: 50%;
 }
 
 .sliderOverlay {
@@ -146,19 +156,19 @@
     display: inline-block;
 }
 
-[data-index="0"], [data-index="5"] {
+[data-index="0"], [data-index="5"], [data-index="10"] {
     background-image: url('../../../assets/misc/micescape.jpg');
 }
-[data-index="1"], [data-index="6"] {
+[data-index="1"], [data-index="6"], [data-index="11"]{
     background-image: url('../../../assets/misc/college-dropout-watermark.png');
 }
-[data-index="2"], [data-index="7"] {
+[data-index="2"], [data-index="7"], [data-index="12"] {
     background-image: url('../../../assets/misc/iconomonster.jpg');
 }
-[data-index="3"], [data-index="8"] {
+[data-index="3"], [data-index="8"], [data-index="13"] {
     background-image: url('../../../assets/misc/youtube.png');
 }
-[data-index="4"], [data-index="9"] {
+[data-index="4"], [data-index="9"], [data-index="14"] {
     background-image: url('../../../assets/misc/somos-algo.png');
 }
 
@@ -176,7 +186,6 @@
 
 @media (max-width: 1366px) {
     .sliderInside {
-        font-size: min(3vh, 30px);
         letter-spacing: 0.15rem;
     }
 }
